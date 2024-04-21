@@ -52,5 +52,5 @@ it('returns an error if one user tries to fetch another users order', async () =
     .get(`/api/orders/${order.id}`)
     .set('Cookie', global.signin())
     .send()
-    .expect(403);
+    .expect(401);
 });

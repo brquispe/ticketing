@@ -6,6 +6,7 @@ import cookieSession from 'cookie-session';
 import { showOrderRouter } from './routes/show';
 import { indexOrderRouter } from './routes';
 import { newOrderRouter } from './routes/new';
+import { deleteOrderRouter } from './routes/delete';
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(currentUser);
 app.use(showOrderRouter);
 app.use(indexOrderRouter);
 app.use(newOrderRouter);
+app.use(deleteOrderRouter);
 
 app.all("*", async () => {
   throw new NotFoundError();
